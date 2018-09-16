@@ -1,0 +1,6 @@
+.idea
+.php_cs
+.DS_STORE
+composer.lock
+/vendor/
+/var/
