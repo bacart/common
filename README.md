@@ -1,15 +1,12 @@
 Bacart common
 =============
+[![PHP](https://img.shields.io/badge/php-%5E7.1-blue.svg)](https://img.shields.io/badge/php-%5E7.1-blue.svg)
 [![Latest Stable Version](https://poser.pugx.org/bacart/common/v/stable.png)](https://packagist.org/packages/bacart/common)
 [![Total Downloads](https://poser.pugx.org/bacart/common/downloads.svg)](https://packagist.org/packages/bacart/common)
 [![License](https://poser.pugx.org/bacart/common/license.svg)](https://packagist.org/packages/bacart/common)
 
 Bacart common utils.
 
-Requirements
-------------
- - PHP >= 7.1
- 
 Installation
 ------------
 ##### Using command line:
