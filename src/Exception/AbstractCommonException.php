@@ -2,7 +2,7 @@
 
 namespace Bacart\Common\Exception;
 
-class CommonException extends \Exception
+abstract class AbstractCommonException extends \Exception
 {
     /**
      * {@inheritdoc}
