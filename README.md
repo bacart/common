@@ -1,6 +1,6 @@
 Bacart common
 =============
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/symfony/symfony.svg?style=flat-square)](https://packagist.org/packages/bacart/common)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/symfony/symfony.svg)](https://packagist.org/packages/bacart/common)
 [![Latest Stable Version](https://poser.pugx.org/bacart/common/v/stable.png)](https://packagist.org/packages/bacart/common)
 [![Total Downloads](https://poser.pugx.org/bacart/common/downloads.svg)](https://packagist.org/packages/bacart/common)
 [![License](https://poser.pugx.org/bacart/common/license.svg)](LICENSE)
