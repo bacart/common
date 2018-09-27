@@ -12,7 +12,9 @@ class UnexpectedTypeException extends AbstractCommonException
      */
     public function __construct($value, string $expectedType)
     {
-        if (\is_string($value)) {
+        if (null === $value) {
+            $givenType = 'NULL';
+        } elseif (\is_string($value)) {
             $givenType = $value;
         } else {
             $givenType = \is_object($value) ? \get_class($value) : \gettype($value);
