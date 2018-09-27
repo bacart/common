@@ -19,8 +19,8 @@ abstract class AbstractCommonException extends \Exception
         } elseif ($messageOrException instanceof \Throwable) {
             parent::__construct(
                 $messageOrException->getMessage(),
-                $messageOrException->getCode(),
-                $messageOrException
+                $code ?: $messageOrException->getCode(),
+                $previous ?: $messageOrException->getPrevious()
             );
         } else {
             parent::__construct('', $code, $previous);
