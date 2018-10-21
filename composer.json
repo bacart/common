@@ -14,10 +14,12 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.10.3"
+        "phpstan/phpstan": "^0.10.3",
+        "vimeo/psalm": "^2.0"
     },
     "suggest": {
-        "phpstan/phpstan": "PHPStan - PHP Static Analysis Tool"
+        "phpstan/phpstan": "PHPStan - PHP Static Analysis Tool",
+        "vimeo/psalm": "A static analysis tool for finding errors in PHP applications"
     },
     "config": {
         "sort-packages": true

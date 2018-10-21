@@ -11,7 +11,11 @@ class ClassUtils
      */
     public static function getClassNamespace(string $class): string
     {
-        return substr($class, 0, strrpos($class, '\\'));
+        if (false === $lastSlashPos = strrpos($class, '\\')) {
+            return $class;
+        }
+
+        return substr($class, 0, $lastSlashPos);
     }
 
     /**
@@ -21,7 +25,11 @@ class ClassUtils
      */
     public static function getClassBaseName(string $class): string
     {
-        return substr(strrchr($class, '\\'), 1);
+        if (false === $lastSlash = strrchr($class, '\\')) {
+            return $class;
+        }
+
+        return substr($lastSlash, 1);
     }
 
     /**
