@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Bacart package.
+ *
+ * (c) Alex Bacart <alex@bacart.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Bacart\Common\Util;
 
 class ClassUtils
@@ -11,11 +20,11 @@ class ClassUtils
      */
     public static function getClassNamespace(string $class): string
     {
-        if (false === $lastSlashPos = strrpos($class, '\\')) {
+        if (false === $lastSlashPos = mb_strrpos($class, '\\')) {
             return $class;
         }
 
-        return substr($class, 0, $lastSlashPos);
+        return mb_substr($class, 0, $lastSlashPos);
     }
 
     /**
@@ -25,11 +34,11 @@ class ClassUtils
      */
     public static function getClassBaseName(string $class): string
     {
-        if (false === $lastSlash = strrchr($class, '\\')) {
+        if (false === $lastSlash = mb_strrchr($class, '\\')) {
             return $class;
         }
 
-        return substr($lastSlash, 1);
+        return mb_substr($lastSlash, 1);
     }
 
     /**
@@ -78,7 +87,7 @@ class ClassUtils
             $reflection = new \ReflectionClass($class);
 
             foreach ($reflection->getConstants() as $key => $value) {
-                if (null === $prefix || 0 === strpos($key, $prefix)) {
+                if (null === $prefix || 0 === mb_strpos($key, $prefix)) {
                     $result[] = $value;
                 }
             }
