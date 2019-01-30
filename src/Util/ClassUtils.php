@@ -20,11 +20,11 @@ class ClassUtils
      */
     public static function getClassNamespace(string $class): string
     {
-        if (false === $lastSlashPos = mb_strrpos($class, '\\')) {
+        if (false === $lastSlashPos = strrpos($class, '\\')) {
             return $class;
         }
 
-        return mb_substr($class, 0, $lastSlashPos);
+        return substr($class, 0, $lastSlashPos);
     }
 
     /**
@@ -34,11 +34,11 @@ class ClassUtils
      */
     public static function getClassBaseName(string $class): string
     {
-        if (false === $lastSlash = mb_strrchr($class, '\\')) {
+        if (false === $lastSlash = strrchr($class, '\\')) {
             return $class;
         }
 
-        return mb_substr($lastSlash, 1);
+        return substr($lastSlash, 1);
     }
 
     /**
@@ -87,7 +87,7 @@ class ClassUtils
             $reflection = new \ReflectionClass($class);
 
             foreach ($reflection->getConstants() as $key => $value) {
-                if (null === $prefix || 0 === mb_strpos($key, $prefix)) {
+                if (null === $prefix || 0 === strpos($key, $prefix)) {
                     $result[] = $value;
                 }
             }

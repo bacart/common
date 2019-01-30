@@ -26,7 +26,7 @@ class UnexpectedTypeException extends AbstractCommonException
         } elseif (\is_string($value)) {
             $givenType = $value;
         } else {
-            $givenType = \is_object($value) ? \get_class($value) : \gettype($value);
+            $givenType = is_object($value) ? get_class($value) : gettype($value);
         }
 
         parent::__construct(sprintf(
