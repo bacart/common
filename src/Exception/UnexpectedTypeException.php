@@ -23,7 +23,7 @@ class UnexpectedTypeException extends AbstractCommonException
     {
         if (null === $value) {
             $givenType = 'NULL';
-        } elseif (\is_string($value)) {
+        } elseif (is_string($value)) {
             $givenType = $value;
         } else {
             $givenType = is_object($value) ? get_class($value) : gettype($value);

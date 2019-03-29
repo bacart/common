@@ -11,6 +11,9 @@
 
 namespace Bacart\Common\Util;
 
+use ReflectionClass;
+use ReflectionException;
+
 class ClassUtils
 {
     /**
@@ -84,14 +87,14 @@ class ClassUtils
         $result = [];
 
         try {
-            $reflection = new \ReflectionClass($class);
+            $reflection = new ReflectionClass($class);
 
             foreach ($reflection->getConstants() as $key => $value) {
                 if (null === $prefix || 0 === strpos($key, $prefix)) {
                     $result[] = $value;
                 }
             }
-        } catch (\ReflectionException $e) {
+        } catch (ReflectionException $e) {
         }
 
         return $result;
