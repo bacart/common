@@ -70,6 +70,32 @@ class StringUtils
     }
 
     /**
+     * @param $str
+     *
+     * @return string
+     */
+    public static function removeEmoji(string $str): string
+    {
+        $patterns = [
+            '/[\x{1F600}-\x{1F64F}]/u', // Emoticons
+            '/[\x{1F300}-\x{1F5FF}]/u', // Miscellaneous symbols and pictographs
+            '/[\x{1F680}-\x{1F6FF}]/u', // Transport and map symbols
+            '/[\x{2600}-\x{26FF}]/u',   // Miscellaneous symbols
+            '/[\x{2700}-\x{27BF}]/u',   // Dingbats
+        ];
+
+        foreach ($patterns as $pattern) {
+            $str = preg_replace(
+                $pattern,
+                ' ',
+                $str
+            );
+        }
+
+        return static::removeMultipleSpaces($str);
+    }
+
+    /**
      * @param int $number
      * @param int $count
      *
