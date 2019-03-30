@@ -20,7 +20,9 @@ class StringUtils
      */
     public static function removeMultipleSpaces(string $str): string
     {
-        return trim(preg_replace('!\s+!', ' ', $str));
+        $result = preg_replace('/\s+/u', ' ', $str);
+
+        return trim($result);
     }
 
     /**
