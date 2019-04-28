@@ -37,7 +37,7 @@ class JsonUtils
             throw new JsonException(json_last_error_msg());
         }
 
-        return $json;
+        return (string) $json;
     }
 
     /**

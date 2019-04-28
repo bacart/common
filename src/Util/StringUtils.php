@@ -74,7 +74,7 @@ class StringUtils
     }
 
     /**
-     * @param $str
+     * @param string $str
      *
      * @return string
      */
